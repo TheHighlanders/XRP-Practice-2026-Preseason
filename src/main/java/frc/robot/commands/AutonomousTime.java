@@ -4,8 +4,8 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+import frc.robot.subsystems.Drivetrain;
 
 public class AutonomousTime extends SequentialCommandGroup {
   /**
@@ -19,7 +19,15 @@ public class AutonomousTime extends SequentialCommandGroup {
     addCommands(
         new DriveTime(1, 2.0, drivetrain),
         new TurnTime(-0.5, 1.3, drivetrain),
-        new DriveTime(-1, 2.0, drivetrain),
-        new TurnTime(0.5, 1.3, drivetrain));
+        new DriveTime(1, 2.0, drivetrain),
+        new TurnTime(0.5, 1.3, drivetrain),
+        new DriveTime(1, 1.0, drivetrain),
+        new TurnTime(0.5, 1, drivetrain));
+        new DriveTime(1, 1.0, drivetrain),
+        //new TurnTime(0.5, 1.3, drivetrain),
+        //new DriveTime(1, 1.0, drivetrain));
+      
+
+
   }
 }
