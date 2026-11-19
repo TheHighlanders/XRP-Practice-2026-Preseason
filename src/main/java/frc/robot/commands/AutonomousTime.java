@@ -17,6 +17,7 @@ public class AutonomousTime extends SequentialCommandGroup {
    */
   public AutonomousTime(Drivetrain drivetrain) {
     addCommands(
+<<<<<<< Updated upstream
         new DriveTime(1, 2.0, drivetrain),
         new TurnTime(-0.5, 1.3, drivetrain),
         new DriveTime(1, 2.0, drivetrain),
@@ -29,5 +30,11 @@ public class AutonomousTime extends SequentialCommandGroup {
       
 
 
+=======
+        new DriveTime(1, 1, drivetrain),
+        new TurnTime(1, 1, drivetrain),
+        new DriveTime(1, 1, drivetrain),
+        new TurnTime(1, 1, drivetrain));
+>>>>>>> Stashed changes
   }
 }

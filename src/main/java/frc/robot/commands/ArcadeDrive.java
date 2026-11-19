@@ -4,7 +4,10 @@
 
 package frc.robot.commands;
 
+<<<<<<< Updated upstream
 import java.time.Duration;
+=======
+>>>>>>> Stashed changes
 import java.util.function.Supplier;
 
 import edu.wpi.first.wpilibj2.command.Command;
@@ -21,6 +24,7 @@ public class ArcadeDrive extends Command {
    *
    */
 
+<<<<<<< Updated upstream
   public ArcadeDrive(Drivetrain drivetrain, 
       Supplier<Double> xaxisSpeedSupplier, 
       Supplier<Double> zaxisRotateSupplier) {
@@ -30,7 +34,14 @@ public class ArcadeDrive extends Command {
         m_zaxisRotateSupplier = zaxisRotateSupplier;
 
         addRequirements(drivetrain);
+=======
+  public ArcadeDrive(Drivetrain drivetrain, Supplier<Double> xaxisSpeedSupplier, Supplier<Double> zaxisRotateSupplier) {
+    m_drivetrain = drivetrain;
+    m_xaxisSpeedSupplier = xaxisSpeedSupplier;
+    m_zaxisRotateSupplier = zaxisRotateSupplier;
+>>>>>>> Stashed changes
 
+    addRequirements(drivetrain);
   }
 
   // Called when the command is initially scheduled.
