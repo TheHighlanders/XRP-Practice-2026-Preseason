@@ -13,8 +13,8 @@ public class DriveDistanceOnOff extends Command {
   private final double m_distance;
   private final double m_speed;
 
-  private final double TURN_EFFORT = 0.2;
-  private final double TURN_RANGE = 10;
+  private final double TURN_EFFORT = 0.5;
+  private final double TURN_RANGE = 0.2;
 
 
   /**
@@ -55,16 +55,19 @@ public class DriveDistanceOnOff extends Command {
 
     double turnEffort = SmartDashboard.getNumber("TURN_EFFORT", TURN_EFFORT);
     double turnRange = SmartDashboard.getNumber("TURN_RANGE", TURN_RANGE);
+
+    // error 20, pointed right, left is ahead
+    // WANT TO STEER???? want to turn left
     if(error > turnRange) {
-      steer = -turnEffort;
-    } else if(error < -turnRange) {
       steer = turnEffort;
+    } else if(error < -turnRange) {
+      steer = -turnEffort;
     } else {
       steer = 0;
     }
     SmartDashboard.putNumber("STEER", steer);
 
-    m_drive.arcadeDrive(m_speed, 0);
+    m_drive.arcadeDrive(m_speed, steer);
   }
 
   // Called once the command ends or is interrupted.
